@@ -38,6 +38,9 @@ build/
 docker-data/
 *.pid
 
+# Qdrant local storage
+qdrant_storage/
+
 # Git
 *.orig
 

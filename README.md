@@ -12,8 +12,16 @@ Test local AI/RAG project using:
 
 ## Start
 
+Just start containers (no rebuild):
+
 ```bash
-docker compose up --build
+./start.sh
+```
+
+Full deploy with build:
+
+```bash
+./deploy.sh
 ```
 
 ## Pull models inside Ollama container
