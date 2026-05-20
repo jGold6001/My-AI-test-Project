@@ -61,4 +61,4 @@ models/
 # AI/WebUI data
 open-webui-data/
 
-*.claude
+.claude
