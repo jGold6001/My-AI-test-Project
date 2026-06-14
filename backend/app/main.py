@@ -19,6 +19,9 @@ LLM_MODEL = os.getenv("LLM_MODEL", "llama3")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "nomic-embed-text")
 VECTOR_SIZE = int(os.getenv("VECTOR_SIZE", "768"))  # nomic-embed-text uses 768-dimensional vectors
 
+UPLOAD_DIR = Path("uploads")
+UPLOAD_DIR.mkdir(exist_ok=True)
+
 app = FastAPI(title="MyOwnAI Test Project")
 
 app.add_middleware(
