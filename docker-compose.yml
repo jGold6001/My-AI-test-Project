@@ -8,7 +8,7 @@ services:
       - OLLAMA_BASE_URL=http://ollama:11434
       - QDRANT_URL=http://qdrant:6333
       - COLLECTION_NAME=myownai_docs
-      - LLM_MODEL=llama3.2:1b
+      - LLM_MODEL=my-model
       - EMBEDDING_MODEL=nomic-embed-text
       - VECTOR_SIZE=768
     depends_on:
@@ -60,7 +60,9 @@ services:
         condition: service_healthy
     environment:
       - OLLAMA_HOST=http://ollama:11434
-    entrypoint: ["/bin/sh", "-c", "ollama pull nomic-embed-text && ollama pull llama3.2:1b"]
+    volumes:
+      - ./my-model:/my-model
+    entrypoint: ["/bin/sh", "-c", "ollama pull nomic-embed-text && ollama create my-model -f /my-model/Modelfile"]
 
 volumes:
   ollama_data:

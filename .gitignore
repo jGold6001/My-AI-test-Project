@@ -41,6 +41,8 @@ docker-data/
 # Qdrant local storage
 qdrant_storage/
 
+backend/uploads/
+
 # Git
 *.orig
 
